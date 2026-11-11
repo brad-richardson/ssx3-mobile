@@ -1,0 +1,3 @@
+[submodule "ssx3"]
+	path = ssx3
+	url = https://github.com/andersfischernielsen/ssx3-decomp

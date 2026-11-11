@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = ["crates/ssx3-mobile-core", "crates/ssx3-android"]
+exclude = ["ssx3"]
+
+[profile.game]
+inherits = "release"
+lto = false
+codegen-units = 64
+

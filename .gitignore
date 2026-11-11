@@ -1,0 +1,15 @@
+/target/
+/ssx3/SSX 3 (USA).iso
+/ssx3/orig/
+/ssx3/generated/
+/ssx3/target/
+/android/.gradle/
+/android/build/
+/android/app/build/
+*.apk
+*.aab
+*.jks
+*.keystore
+*.ps2
+*.pack
+*.iso
