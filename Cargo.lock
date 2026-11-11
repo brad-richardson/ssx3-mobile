@@ -2100,6 +2100,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "ssx3-ios"
+version = "0.1.0"
+dependencies = [
+ "cpal",
+ "font8x8",
+ "pollster",
+ "raw-window-handle",
+ "sha2",
+ "ssx3-engine",
+ "ssx3-mobile-core",
+ "wgpu",
+ "winit",
+]
+
+[[package]]
 name = "ssx3-mc"
 version = "0.1.0"
 

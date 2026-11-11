@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/ssx3-mobile-core", "crates/ssx3-android"]
+members = ["crates/ssx3-mobile-core", "crates/ssx3-android", "crates/ssx3-ios"]
 exclude = ["ssx3"]
 
 [profile.game]

@@ -1,0 +1,46 @@
+name: SSX3MobileIOS
+options:
+  bundleIdPrefix: com.ssx3decomp.test
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  SSX3MobileIOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: main.m
+      - path: bridge.m
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ssx3decomp.test.mobileios1
+        INFOPLIST_FILE: Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        ARCHS: arm64
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        CODE_SIGNING_ALLOWED: NO
+        LIBRARY_SEARCH_PATHS: "$(SSX3_IOS_LIB_DIR)"
+        OTHER_LDFLAGS: "$(inherited) $(SSX3_IOS_LIB_DIR)/libssx3_ios.a -framework Foundation -framework UIKit -framework Metal -framework QuartzCore -framework CoreGraphics -framework GameController -framework AVFoundation -framework AudioToolbox -framework CoreAudio -framework CoreFoundation -framework IOKit -framework Security -framework SystemConfiguration -framework UniformTypeIdentifiers -framework MobileCoreServices -framework ImageIO -framework Accelerate -lc++ -lz"
+  SSX3MobileIOSUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    dependencies:
+      - target: SSX3MobileIOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ssx3decomp.test.mobileios1.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: SSX3MobileIOS
+        ARCHS: arm64
+        CODE_SIGNING_ALLOWED: NO
+schemes:
+  SSX3MobileIOS:
+    build:
+      targets:
+        SSX3MobileIOS: all
+        SSX3MobileIOSUITests: [test]
+    test:
+      targets:
+        - SSX3MobileIOSUITests

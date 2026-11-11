@@ -13,3 +13,6 @@
 *.ps2
 *.pack
 *.iso
+
+/ios/*.xcodeproj/
+/ios/*.xcworkspace/
