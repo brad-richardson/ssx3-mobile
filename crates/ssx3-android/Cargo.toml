@@ -1,0 +1,24 @@
+[package]
+name = "ssx3-android"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = []
+emu-gs = ["ssx3-engine/emu-gs"]
+
+[dependencies]
+ssx3-mobile-core = { path = "../ssx3-mobile-core" }
+ssx3-engine = { path = "../../ssx3/crates/ssx3-engine" }
+
+[target.'cfg(target_os = "android")'.dependencies]
+cpal = "0.18"
+font8x8 = "0.3.1"
+jni = "0.22.4"
+pollster = "1.0.1"
+sha2 = "0.10.9"
+wgpu = "30.0.1"
+winit = { version = "0.30.13", features = ["android-native-activity"] }

@@ -1,0 +1,11 @@
+diff --git a/crates/ssx3-engine/src/lib.rs b/crates/ssx3-engine/src/lib.rs
+--- a/crates/ssx3-engine/src/lib.rs
++++ b/crates/ssx3-engine/src/lib.rs
+@@ -339,5 +339,6 @@
+             return Pace::Wait(self.pacer.wait(now, period));
+         }
+-        ssx3_ps2::machine::set_audio_lead_frames((self.pacer.audio_lead() * 48000.0) as u32);
++        // Mobile play: keep at least 84 ms queued while cpal owns the callback.
++        ssx3_ps2::machine::set_audio_lead_frames((self.pacer.audio_lead().max(0.084) * 48000.0) as u32);
+         tick::set_updates_per_vsync(plan.updates_per_vsync);
+         Pace::Run(plan.vsyncs)
