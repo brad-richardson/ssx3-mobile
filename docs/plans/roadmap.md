@@ -20,11 +20,9 @@ Mobile-driven core changes belong in the decomp once proven on device,
 so both front ends share them instead of carrying patches. Each needs
 its device receipt first.
 
-- ⬜ **Android app core (upstream PR #21, closed; to be re-proposed).** Bootstrap, lifetimes,
-  launcher re-entry fix, transient-focus resume, Android-only cpal
-  realtime, and the audio-never-pauses policy. Why upstream: every
-  Android front end on this engine needs the same entry, focus and
-  audio rules.
+- ✅ **Front-end seam (upstream PR #25).** The engine library this repo builds
+  on. The earlier Android PR (#21) was closed in its favour: the Android and
+  iOS apps live here, on that seam, as agreed upstream.
 - 🟡 **Save folder (upstream PR #32) and card-import contract.** The copy-only
   `imports/` + sha256 activation with no blank-card fallback. Why
   upstream: one verified import rule beats per-app save handling.
